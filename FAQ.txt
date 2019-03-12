@@ -1,0 +1,30 @@
+0.17 Support
+--------------
+At present the mod has been ported from 0.16 and any errors fixed. The mod isn't currently being updated, but I will fix anything significant.
+
+End of Game
+------------
+If targets are set the mod does not end the game in either case of the tribute freedom target being reached or if the initial rocket launch/tribute target time is not met. The mod GUI will show the status result and a message will be shown, but it will not interfere in your game.
+
+Items Demanded
+------------
+Certain items will never be demanded in tribute regardless of item category mod settings. These items are excluded either to allow inserter loading of the rocket or as they aren't deemed to have value by the gods. The items never demanded are:
+
+- Satellite
+- Rocket Control Unit
+- Rocket Fuel
+- Low Density Structure
+- Used Up Uranium Fuel Cell
+- Blueprint
+- Blueprint Book
+- Deconstruction Planner
+
+Targets and Visual Alerts
+--------
+If targets are enabled these will display under the mod's togglable in-game screen. The timers will highlight orange and then red when the timer is within approximately 20% and 10% of the target and alert (open) once on all players screens at each colour change.
+
+Known Bugs and Issues
+------------
+
+- Instant Construct and De-Construct via Creative Mod cause errors.
+- Rare cases when controller and receiver entities placed by bots won't connect to neighbouring silo.
