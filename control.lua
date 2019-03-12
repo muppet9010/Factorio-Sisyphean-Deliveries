@@ -35,12 +35,15 @@ end
 
 function disable_satelite_dialog()
 	if remote.interfaces["silo_script"] then
-		remote.call("silo_script","set_show_launched_without_satellite", false)
-		remote.call("silo_script","set_finish_on_launch", false)        
+		local trackedInventory = remote.call("silo_script","get_tracked_items")
+		for name in pairs(trackedInventory) do
+			remote.call("silo_script", "remove_tracked_item", name)
+		end
+		remote.call("silo_script","set_no_victory", true)
 	end
 end
 
-local function onsecond_update()	
+local function onsecond_update()
 	ontick_update_first_rocket_countdown()
 	ontick_update_order_countdown()
 	sisyphean.gui.update_countdowns_for_all_players()
@@ -133,14 +136,14 @@ end
 
 
 
-script.on_init(function() 
+script.on_init(function()
 	sisyphean.global.generate_global()
 	start_up()
 end)
-script.on_load(function() 
+script.on_load(function()
 	start_up()
 end)
-script.on_configuration_changed(function() 
+script.on_configuration_changed(function()
 	sisyphean.global.generate_global()
 	start_up()
 	sisyphean.gui.remove_all_gui_versions_for_all_players()

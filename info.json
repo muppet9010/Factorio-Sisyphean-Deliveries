@@ -1,11 +1,11 @@
 {
     "name": "sisyphean_deliveries",
-    "version": "0.1.2",
+    "version": "17.1.3",
     "title": "Sisyphean Deliveries",
     "author": "Muppet9010",
     "contact": "",
-    "homepage": "",
-    "factorio_version": "0.16",
-    "dependencies": ["base >= 0.16"],
+    "homepage": "https://mods.factorio.com/mod/sisyphean_deliveries",
+    "factorio_version": "0.17",
+    "dependencies": ["base >= 0.17"],
     "description": "Launch an ever growing tribute of items in to space for eternity."
 }

@@ -1,5 +1,5 @@
 sisyphean.order_item = {
-	initialise = function() 
+	initialise = function()
 		sisyphean.order_item.make_item_lists()
 	end,
 
@@ -33,24 +33,23 @@ sisyphean.order_item = {
 		return possible_items
 	end,
 
-	
+
 
 	make_manual_item_list = function()
 		sisyphean.order_item.manual_item_list = {
 			"raw-fish",
 			"wooden-chest",
-			"raw-wood",
 			"wood",
 			"small-electric-pole"
 		}
 	end,
-	
+
 	make_massive_item_list = function()
 		sisyphean.order_item.massive_item_list = {
 			"rocket-silo"
 		}
 	end,
-	
+
 	make_equipment_item_list = function()
 		sisyphean.order_item.equipment_item_list = {
 			"battery-equipment",
@@ -86,13 +85,11 @@ sisyphean.order_item = {
 			"shotgun",
 			"submachine-gun",
 			"land-mine",
-			"iron-axe",
-			"steel-axe",
 			"repair-pack"
 		}
 	end,
-	
-	make_raw_ingredients_item_list = function() 
+
+	make_raw_ingredients_item_list = function()
 		sisyphean.order_item.raw_ingredients_item_list = {
 			"coal",
 			"copper-ore",
@@ -113,7 +110,7 @@ sisyphean.order_item = {
 			"heavy-oil-barrel"
 		}
 	end,
-	
+
 	make_flooring_item_list = function()
 		sisyphean.order_item.flooring_item_list = {
 			"hazard-concrete",
@@ -122,7 +119,7 @@ sisyphean.order_item = {
 			"concrete"
 		}
 	end,
-	
+
 	make_uranium_products_item_list = function()
 		sisyphean.order_item.uranium_products_item_list = {
 			"uranium-235",
@@ -135,7 +132,7 @@ sisyphean.order_item = {
 			"nuclear-fuel"
 		}
 	end,
-	
+
 	make_vehicle_turret_ammo_item_list = function()
 		sisyphean.order_item.vehicle_turret_ammo_item_list = {
 			"artillery-turret",
@@ -160,7 +157,7 @@ sisyphean.order_item = {
 			"shotgun-shell"
 		}
 	end,
-	
+
 	make_circuitry_item_list = function()
 		sisyphean.order_item.circuitry_item_list = {
 			"arithmetic-combinator",
@@ -170,7 +167,7 @@ sisyphean.order_item = {
 			"programmable-speaker"
 		}
 	end,
-	
+
 	make_science_item_list = function()
 		sisyphean.order_item.science_item_list = {
 			"science-pack-1",
@@ -182,7 +179,7 @@ sisyphean.order_item = {
 			"space-science-pack"
 		}
 	end,
-	
+
 	make_factory_item_list = function()
 		sisyphean.order_item.factory_item_list = {
 			"accumulator",

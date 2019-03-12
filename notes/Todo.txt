@@ -1,0 +1,42 @@
+[spoiler=Planned Minor Enhancements]
+[list]
+	[*]unlock new circuit items and signals with the rocket silo technology
+	[*]Demand Receiver to have signals for outstanding item tributes and number of items demanded in current demand.
+	[*]Option to have a demand made up of identical items or different items. Prevent Duplicate only applies if set to different items.
+	[*]Tribute Report API command that will output a nicely formatted and clean list of items tributed and summary total information. An enhanced version of sisyphean_debug_get_global designed for getting statistics out, rather than for debugging purposes.
+	[*]Controllers and Loaders don't de-activate when marked for deconstruction or re-activate when unmarked for deconstruction.
+	[*]Demand Receiver to have signals for tributes made, tribute target, items tributed, and item tribute target.
+[/list]
+[/spoiler]
+
+[spoiler=Planned Major Features]
+[list]
+	 [*]Add demand for a person. See what can be done around them being a sacrifice and if we can detect named player as in the rocket.
+	 [*]Technology to increase rocket cargo size.
+	 [*]Allow viewing of completed demands including how quickly they were completed.
+	 [*]Make status a different background colour so white text on grey/dark orange or red stands out better on stream. Need to use a background image as a coloured background for this.
+	 [*]Reward option based around returning a quantity of random science or returning space science. Options to control quantity ranges.
+[/list]
+[/spoiler]
+
+[spoiler=Exploratory Concepts and Suggestions]
+[list]
+	[*]Replace mod name with an image in GUI on the top bar.
+	[*]Change item types to be sub-group driven rather than hardcoded to allow support of mod items. This would mean mod items using stock sub-groups are included by default and mod specific sub-groups would have to be coded and configured separately. Review impact on stock game items as some current categories are cross sub-group i.e. uranium products.
+	[*]Move source code to git hub and open up.
+	[*]Make use of event "on_runtime_mod_setting_changed" to detect when mod settings are changed and move away from startup settings, see if any settings should be cached as variables rather than obtained on the fly. Also, move some of the global state inspection to this.
+	[*]Make a non-rocket launch option where items are deposited in a *building*. Could allow for additional tiering of item types and an infinite supply challenge type mode where you start supplying simple items early on.
+	[*]Support for multiple forces competing. Options to have identical targets for each force. Freedom target is the end win condition. Scoreboard to show all forces progression.
+	[*]use pcall to handle error scenarios. Should an error occur output log the global contents and report an onscreen error. Stop all events and timed registrations to avoid further errors or global state corruption. Have a way to recover the mods state from the current global information, which may have been fixed via script.
+	[*]Add a "reset" debug command to return the mod to its game start state; destroy GUI, events and commands. wipe global. launch mod startup code to re-initialise everything.
+	[*]Convert the GUI elements all to constants with a mapped structure and separate out to util functions, etc. the add GUI element returns the created element and name is optional.
+	[*]Support for multiple concurrent demands (order slots). Different Rocket Silo(s) can be assigned to a specific demand slot.
+	[*]Check if non admins can run the commands and if so address if possible.
+[/list]
+[/spoiler]
+
+[spoiler=Concepts and Suggestions Not Being Pursued]
+[list]
+	[*]All player chat tribute demand announcement - on quick demand completion would cause frequent chat messages and considered spam by some.
+[/list]
+[/spoiler]

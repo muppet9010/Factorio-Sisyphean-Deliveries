@@ -1,0 +1,117 @@
+---------------------------------------------------------------------------------------------------
+Version: 17.1.3
+Date: 2019-01-20
+  Features:
+    - Updated to be compatible with 0.17, no functional changes.
+  Changes:
+    - no longer requests axes and raw-wood items.
+  Bugfixes:
+  Info:
+    - converted changelog.
+    - converted to use new mod portal rather than forum thread.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2018-06-17
+  Bugfixes:
+    - A large UPS spike occurred when tribute demand items were received in Multiplayer games with many players. The GUI now only updates connected players and when players rejoin they will have their GUI updated immediately to catch up.
+    - Typo in Iron Axe demanded item.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2018-06-05
+  Features:
+    - Rocket Load Receiver will output a Preparing Rocket signal when the rocket is being prepared and is not available for loading or launching.
+    - All signals have graphics rather than placeholders.
+  Bugfixes:
+    - Now handles situation in order reserved validity check if an order's reserving rocket load receiver no longer had a silo, but the order was still reserved (the rocket load controller had released its known reserved order item).
+    - Signal name to translations corrected
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2018-06-03
+  Features:
+    - Circuit Network Integration added. Includes the Rocket Silo Controller, Rocket Load Receiver and Tribute Demand Receiver. Rocket Load Receiver outputs the signals: Rocket Ready To Load, Rocket Ready To Launch, the reserved item type from current demand, the reserved item stack size from current demand. Tribute Demand Receiver outputs the signals: Demand Target Time Remaining, items to be received via rocket in total.
+  Bugfixes:
+    - Repair Packs, Iron Axe and Steel Axe added to requested items list.
+    - When tribute target is changed via API the item total will increase at the same time, rather than on next rocket launch.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.7
+Date: 2018-05-25
+  Features:
+    - Science packs can be included in the demand list via a mod option, the default is on.
+    - Added percentage of tributes made, total tributed and projected items with the percentage into the Tributes Made counter GUI section.
+  Changes:
+    - Don't include Rocket Part components or satellites in demands as they can't be loaded by inserters into the rocket.
+    - Mod setting text for tribute demand item list "Standard Factory Buildings" clarified to be "Standard Factory Buildings & Intermediate Products".
+  Bugfixes:
+    - Nuclear fuel as a tribute demand item was under Standard Factory Buildings list and not Uranium.
+    - sisyphean_complete_tribute API command marks each demanded item as completed in addition to the tribute demand as a whole.
+    - When "Prevent Duplicate Demand Items" is enabled if there are fewer items in the allowed item list than the current tribute demand size the option is ignored for the items above the allowed item list size. In this scenario, it ensures a full-sized tribute demand is made and that at least one of every item is included before the duplicates are allowed in.
+  Info:
+    - Add localised help string to the API commands for use with "/h COMMAND". Also simplified API command descriptions and documentation.
+    - Update status messages to be more self-descriptive and rely less on hover text. Avoid repeated explanations for streamers.
+    - Added mod global set commands to support debugging issues if required.
+    - Reworked win/lost and new demand logic to avoid rare cases the mod got in an undesirable state when continued after a win/lost condition.
+    - Change timer function to return a flag saying positive or negative and just prefix a "-" if minus, rather than manipulate the time section values. Keeps all aw time values positive for simpler use.
+    - Migration process changed to behave better cross multiple version changes.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 2018-05-17
+  Changes:
+    - Demand order items in GUI ordered by status (partial completed, not completed, completed) then by item name. So the first ones on the list are outstanding and duplicates of an equal completed state are next to each other.
+    - Added padding to secondary timer values to be double digits, i.e. minute value when the primary value is hours; 1:5 hours = 1:05 hours
+  Bugfixes:
+    - when there are duplicated items if the stack is oversupplied across multiple rockets all later instances of that item are incorrectly completed. 2 stacks demanded and supplied as 1/2 stack, followed by 1 stack. On the second rocket launch, both demands for stack 1 and 2 are completed.
+    - GUI not scrolling when over 50 item demand size and resolved the GUI recreating more than needed, causing it to scroll back to the top.
+    - The mod menu after failing a target shows correct text
+  Info:
+    - Timer display text and number handling simplified.
+    - API Commands confirm the action done in the global text (positive or negative outcome)
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 2018-05-16
+  Changes:
+    - Timers show as PRIMARY:SECONDARY rather than decimals, i.e. 3:27 hours
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 2018-05-15
+  Changes:
+    - Updated GUI refresh to be once a second, rather than every 10
+  Bugfixes:
+    - target timer issue affecting 2 or more hours being displayed wrong.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 2018-05-14
+  Features:
+    - Change tribute demand warning to be 2 stage, orange for 20-10% time left, red for 10-0% time left. re-pop tribute demand window on a change to both warning states.
+    - Change first rocket warning to be 2 stage, orange for 20-10% time left, red for 10-0% time left. re-pop tribute demand window on a change to both warning states.
+    - Tribute Demand Growth size configurable.
+    - Change tribute demand list supplied quantity to be colour coded based on the number supplied. The default color for none or some, green for all. Should resolve very wide labels for 3 digit stack sizes when supplied and make the demand screen less cluttered when multiple demands. On hover still shows exact supplied out of total required (stack size).
+  Changes:
+    - Red warning text made brighter so stands out.
+    - Timers show the time in hours, minutes or seconds based on current quantity. currently just shows the minutes.
+    - Tribute Freedom Target and both delivery targets show a centred themed message to make it very apparent you've won/lost. This message should not end the game in any way though.
+  Bugfixes:
+    - Fixed Duplicate Item Prevention option to take effect, rather than being forced permanently on.
+    - GUI alignment standardised
+    - Tribute demand items on hover to be on the item frame plus the item image and text. Resolve current on-hover dead spot issue. Still a tiny dead zone between the image and text, but all GUI elements have the on-hover.
+  Info:
+    - Tested with Big Bags mod and demands are 1 stack of its increased size, i.e. 500 solar panels.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 2018-05-04
+  Features:
+    - Added massive item type; rocket silo
+    - Added option to prevent duplicate items in demand
+    - Added optional tribute start timer to GUI, turns red when less than 20%~ time remaining and alerts all players
+    - Added optional tribute demand target time shown in the GUI, turns red when less than 20%~ time remaining and alerts all players
+  Changes:
+    - All API commands made safe for running at any time
+  Bugfixes:
+    - Fixed implemented API command debug_completed_orders_set
+  Info:
+    - Enhancement moved to getter and setter functions for global.state "orders_completed" and "order_target" to ensure GUI updates are triggered on all modifications
+    - Added completed time to demand when done (but not currently used in a visible list)
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 2018-05-03
+  Features:
+    - Initial version
