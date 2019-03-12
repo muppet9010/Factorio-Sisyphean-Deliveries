@@ -1,0 +1,11 @@
+{
+    "name": "sisyphean_deliveries",
+    "version": "0.1.2",
+    "title": "Sisyphean Deliveries",
+    "author": "Muppet9010",
+    "contact": "",
+    "homepage": "",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.16"],
+    "description": "Launch an ever growing tribute of items in to space for eternity."
+}
